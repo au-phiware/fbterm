@@ -1,0 +1,13 @@
+Makefile
+/config.h
+/config.log
+/config.status
+/doc/*.[0-9]
+.deps/
+src/**/*.o
+src/**/*.a
+src/fbterm
+/im/immessage.h
+/im/input_key.h
+/stamp-h1
+/autom4te.cache/

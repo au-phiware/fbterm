@@ -1,3 +1,7 @@
+2015-05-2 version 1.7.1
+	* fbshell.cpp:
+	added solarized colour palettes
+	
 2010-10-5 version 1.7
 	* vterm.cpp charsetmap.cpp:
 	improved escape sequences support, now curses h/v lines should be drawed correctly 

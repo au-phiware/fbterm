@@ -15,6 +15,11 @@ AC_PROG_CC
 AC_PROG_RANLIB
 PKG_PROG_PKG_CONFIG
 
+AC_ARG_ENABLE(solarized, 
+              AC_HELP_STRING([--disable-solarized], [disable solarized colour scheme [[default=no]]]), 
+              [SOLARIZED="$enableval"],
+              [SOLARIZED=no])
+              
 AC_ARG_ENABLE(gpm, 
               AC_HELP_STRING([--disable-gpm], [disable gpm mouse support [[default=auto]]]), 
               [GPM="$enableval"],
@@ -105,11 +110,15 @@ x86_LIBS=
 [[ "$VESA" = "yes" ]] && x86_LIBS="-lx86"
 AC_SUBST([X86_LIBS], ["$x86_LIBS"])
 
+AH_TEMPLATE([SOLARIZED_LIGHT])
+AH_TEMPLATE([SOLARIZED_DARK])
 AH_TEMPLATE([ENABLE_GPM])
 AH_TEMPLATE([ENABLE_VESA])
 AH_TEMPLATE([HAVE_EPOLL])
 AH_TEMPLATE([HAVE_SIGNALFD])
 
+[[ "$SOLARIZED" = "light" ]] && AC_DEFINE([SOLARIZED_LIGHT])
+[[ "$SOLARIZED" = "dark" ]] && AC_DEFINE([SOLARIZED_DARK])
 [[ "$GPM" = "yes" ]] && AC_DEFINE([ENABLE_GPM])
 [[ "$VESA" = "yes" ]] && AC_DEFINE([ENABLE_VESA])
 [[ "$EPOLL" = "yes" ]] && AC_DEFINE([HAVE_EPOLL])

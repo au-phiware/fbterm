@@ -167,6 +167,12 @@
 /* Define as the return type of signal handlers (`int' or `void'). */
 #undef RETSIGTYPE
 
+/* */
+#undef SOLARIZED_DARK
+
+/* */
+#undef SOLARIZED_LIGHT
+
 /* Define to 1 if you have the ANSI C header files. */
 #undef STDC_HEADERS
 
